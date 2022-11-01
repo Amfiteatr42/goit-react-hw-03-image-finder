@@ -21,7 +21,8 @@ export class App extends Component {
 
     if (prevState.page !== page || prevState.query !== query) {
       try {
-        this.setState({isLoading: true})
+        this.setState({ isLoading: true })
+        
         const images = await axios.get(`?q=${query}&page=${page}&key=30320349-f886ff3d38376fcc5572a2958&image_type=photo&orientation=horizontal&per_page=12`)
         .then(res => res.data.hits)
 
